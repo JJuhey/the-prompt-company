@@ -23,7 +23,7 @@ export default async function ArchiveContentPage({ params }: { params: { id: str
   const md = await getNotionMarkdown(params.id)
 
   return (
-    <article className="flex flex-col gap-1">
+    <article className="flex flex-col gap-1 min-h-screen">
       <div className="font-bold text-lg">{title}</div>
       <div className="self-end text-sm text-zinc-700">
         {dayjs(createdAt).format("YYYY-MM-DD")}

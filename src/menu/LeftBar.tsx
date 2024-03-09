@@ -10,7 +10,7 @@ export default function LeftBar() {
   if (!menus) return <nav className="lg:w-52 fixed top-16 left-0"></nav>;
 
   return (
-    <nav className="lg:w-52 flex flex-col gap-2 pt-5 p-2 text-zinc-700 font-light text-sm fixed top-16 left-0">
+    <nav className="lg:w-52 flex flex-col gap-2 pt-5 p-2 text-zinc-700 dark:text-zinc-200 font-light text-sm fixed top-16 left-0">
       {menus.map((menu) => {
         const selectedId = pathname.split("/").pop();
         const isSelected = menu.id === selectedId;
