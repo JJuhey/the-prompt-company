@@ -8,7 +8,7 @@ export default function ArchiveLayout({
       <div className="max-md:hidden">
         <LeftBar />
       </div>
-      <div className="flex-1 pt-7 px-10 md:ml-52">
+      <div className="flex-1 pt-7 px-10 md:ml-52 max-w-full">
         {children}
       </div>
     </div>
