@@ -15,16 +15,16 @@ export default function TopBar() {
       <div>
         <ul className="flex flex-row gap-5">
           <li className="max-md:hidden">
-            <Link href="/archive">archive</Link>
+            <Link href="/archive">Archive</Link>
           </li>
           <li className="max-md:hidden cursor-pointer">
-            <Link href="/projects">projects</Link>
+            <Link href="/projects">Projects</Link>
           </li>
           <li className="max-md:hidden cursor-pointer">
-            <Link href="/contact">contact</Link>
+            <Link href="/contact">Contact</Link>
           </li>
           <li className="max-md:hidden cursor-pointer">
-            <Link href="/people">people</Link>
+            <Link href="/people">People</Link>
           </li>
           <li>
             <button className="cursor-pointer mx-2" id="darkModeToggle"value={mode} onClick={() => {

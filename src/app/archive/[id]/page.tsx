@@ -16,10 +16,11 @@ async function getPost(id: string) {
 
 export default async function ArchiveContentPage({ params }: { params: { id: string } }) {
   const post = (await getPost(params.id)) as any;
+  if (!post) return null;
+
   const title = post.properties["Title"].title[0].plain_text;
   const tags = post.properties["Tags"].multi_select as { id: string; name: string; color: string; }[];
   const createdAt = post.properties["CreatedAt"].created_time;
-  // const detail = await getNotionBlock(params.id);
   const md = await getNotionMarkdown(params.id)
 
   return (
@@ -42,7 +43,7 @@ export default async function ArchiveContentPage({ params }: { params: { id: str
           ol: (props) => (<ol className="list-decimal pl-5" {...props} />),
           img: (props) => (<img className="max-w-[50%] mx-[20%]" {...props} />),
           code: (props) => (<code className="border rounded-md text-red-500 text-sm p-0.5 dark:border-0 dark:bg-zinc-800"{...props} />),
-          pre: (props) => (<pre className="overflow-scroll p-3 bg-slate-100 rounded-md" {...props} />)
+          pre: (props) => (<pre className="overflow-scroll p-3 pb-5 bg-slate-100 dark:bg-slate-700 rounded-md" {...props} />)
         }} />
       </div>
     </article>
