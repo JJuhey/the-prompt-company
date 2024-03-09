@@ -41,7 +41,8 @@ export default async function ArchiveContentPage({ params }: { params: { id: str
           ul: (props) => (<ul className="list-disc" {...props} />),
           ol: (props) => (<ol className="list-decimal pl-5" {...props} />),
           img: (props) => (<img className="max-w-[50%] mx-[20%]" {...props} />),
-          code: (props) => (<code className="border rounded-md text-red-500 text-sm p-0.5 dark:border-0 dark:bg-zinc-800"{...props} />)
+          code: (props) => (<code className="border rounded-md text-red-500 text-sm p-0.5 dark:border-0 dark:bg-zinc-800"{...props} />),
+          pre: (props) => (<pre className="overflow-scroll p-3 bg-slate-100 rounded-md" {...props} />)
         }} />
       </div>
     </article>
