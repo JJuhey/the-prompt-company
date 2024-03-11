@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { useState } from "react";
+import MobileRightBar from "./MobileRightBar";
 
 export default function TopBar() {
   const [mode, setMode] = useState("light");
@@ -17,13 +18,13 @@ export default function TopBar() {
           <li className="max-md:hidden">
             <Link href="/archive">Archive</Link>
           </li>
-          <li className="max-md:hidden cursor-pointer">
+          <li className="max-md:hidden">
             <Link href="/projects">Projects</Link>
           </li>
-          <li className="max-md:hidden cursor-pointer">
+          <li className="max-md:hidden">
             <Link href="/contact">Contact</Link>
           </li>
-          <li className="max-md:hidden cursor-pointer">
+          <li className="max-md:hidden">
             <Link href="/people">People</Link>
           </li>
           <li>
@@ -37,21 +38,12 @@ export default function TopBar() {
                 
             )}</button>
           </li>
-          <li className="md:hidden" onClick={() => setShow(!show)}>
+          <li className="md:hidden cursor-pointer" onClick={() => setShow(!show)}>
             <svg fill="none" width="24" height="24" viewBox="0 0 24 24" stroke="currentColor" className=""><g><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16"></path></g><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 12h16"></path><g><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 18h16"></path></g></svg>
           </li>
         </ul>
       </div>
-      {show && (
-        <ul className="absolute right-0 top-[65px] bg-white/95 min-h-[100vh] w-52å p-5 flex flex-col gap-5 border-l text-sm">
-          <li>Prompt Engineering</li>
-          <li>menu2</li>
-          <li>menu3</li>
-          <li>menu4</li>
-          <li>menu5</li>
-          <li>menu6</li>
-          <li>menu7</li>
-        </ul>)}
+      {show && <MobileRightBar closeMenuBar={() => setShow(false)}/>}
     </nav>
   )
 }
